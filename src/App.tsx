@@ -15,9 +15,9 @@ function App() {
   const skills = [
     { icon: <Layout />, name: "Дизайн интерфейсов", level: "Продвинутый" },
     { icon: <Smartphone />, name: "Мобильный дизайн", level: "Эксперт" },
-    { icon: <Code2 />, name: "Фронтенд разработка", level: "Эксперт" },
-    { icon: <Database />, name: "Бэкенд разработка", level: "Средний" },
-    { icon: <Globe />, name: "Веб-приложения", level: "Продвинутый" },
+    { icon: <Code2 />, name: "Фронтенд разработка", level: "Продвинутый" },
+    { icon: <Database />, name: "Бэкенд разработка", level: "Продвинутый" },
+    { icon: <Globe />, name: "Веб-приложения", level: "Эксперт" },
     { icon: <Cpu />, name: "Проектирование систем", level: "Средний" }
   ];
 
