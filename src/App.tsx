@@ -97,7 +97,7 @@ function App() {
           <motion.div className="flex flex-col gap-6" initial={{ x: -50 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
             <a href="https://github.com/ishoep" className="nav-item hover:text-white text-gray-500"><Github className="w-5 h-5" /></a>
             <a href="https://t.me/qdweb" className="nav-item hover:text-white text-gray-500"><Send className="w-5 h-5" /></a>
-            <a href="https://studio@webalt.xyz" className="nav-item hover:text-white text-gray-500"><Mail className="w-5 h-5" /></a>
+            <a href="mailto:studio@webalt.xyz" className="nav-item hover:text-white text-gray-500"><Mail className="w-5 h-5" /></a>
           </motion.div>
         </div>
       </nav>
