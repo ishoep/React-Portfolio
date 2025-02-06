@@ -50,7 +50,7 @@ function App() {
       title: "Дизайны товарных карточек и многое другое",
       description: "Другие небольшые но также не менее важные и интересные проекты можно найти в моих соц-сетях",
       image: "https://img.freepik.com/free-vector/gradient-product-card-template_23-2149656335.jpg",
-      tags: ["SaaS", "Full Stack", "React", "Node.js"]
+      tags: ["UI/UX", "Full Stack", "React", "Node.js"]
     }
   ];
 
