@@ -56,10 +56,10 @@ function App() {
 
   const projects = [
     {
-      title: "Платформа для поиска авиабилетов",
-      description: "Система которая помогает найти и купить самые дешёвые авиабилеты. Поиск билетов на самолёт по 728 авиакомпаниям, ведущим авиакассам и лучшие цены.",
-      image: "https://shoel-web.onrender.com/project3.png",
-      tags: [ "React", "TypeScript", "Redux", "Django"]
+      title: "Приложение для постановки целей",
+      description: "Простое и удобное приложение для организации вашего дня и постановки целей.",
+      image: "https://i.postimg.cc/fRjh42ZX/2025-02-06-230035.png",
+      tags: [ "React", "TypeScript", "Vite"]
     },
     {
       title: "Мобильное банковское приложение",
@@ -84,6 +84,12 @@ function App() {
       description: "Другие небольшые но также не менее важные и интересные проекты можно найти в моих соц-сетях",
       image: "https://img.freepik.com/free-vector/gradient-product-card-template_23-2149656335.jpg",
       tags: ["UI/UX", "Full Stack", "React", "Node.js"]
+    },
+    {
+      title: "Платформа для поиска авиабилетов",
+      description: "Система которая помогает найти и купить самые дешёвые авиабилеты. Поиск билетов на самолёт по 728 авиакомпаниям, ведущим авиакассам и лучшие цены.",
+      image: "https://shoel-web.onrender.com/project3.png",
+      tags: [ "React", "TypeScript", "Redux", "Django"]
     }
   ];
 
