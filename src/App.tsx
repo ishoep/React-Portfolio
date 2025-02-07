@@ -199,9 +199,9 @@ function App() {
               <motion.section 
                 key="about" 
                 {...pageTransition}
-                className="min-h-screen py-10 md:py-20 absolute inset-0"
+                className="min-h-screen py-10 md:py-20 absolute inset-0 overflow-y-auto"
               >
-                <div className="glass-card rounded-2xl p-6 md:p-8 mx-4 md:mx-8 w-full max-w-7xl">
+                <div className="glass-card rounded-2xl p-6 md:p-8 mb-4 w-full">
                   <div className="flex flex-col gap-8">
                     {/* Основная информация */}
                     <div>
@@ -264,7 +264,7 @@ function App() {
               <motion.section 
                 key="projects" 
                 {...pageTransition}
-                className="min-h-screen py-20 md:py-0 md:flex md:items-center absolute inset-0"
+                className="min-h-screen pt-20 pb-20 absolute inset-0 overflow-y-auto"
               >
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Избранные проекты</h2>
