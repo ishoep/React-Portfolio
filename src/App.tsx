@@ -39,7 +39,7 @@ function App() {
       title: "Backend Development",
       skills: [
         "PHP, Python (приоритет)",
-        "Java, C#/C++",
+        "Rest API, Soap",
         "SQL, MySQL",
         "Nginx, Apache",
         "Ubuntu/Linux"
