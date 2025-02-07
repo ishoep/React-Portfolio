@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, Github, Linkedin, Mail, ExternalLink, Home, Briefcase, User, Star, Award, Coffee, Globe, Cpu, Layout, Smartphone, Database, ChevronRight, ArrowRight, Send } from 'lucide-react';
+import { Code2, Github, Linkedin, Mail, ExternalLink, Home, Briefcase, User, Star, Award, Coffee, Globe, Cpu, Layout, Smartphone, Database, ChevronRight, ArrowRight, Send, Terminal, Server, Search } from 'lucide-react';
 
 function App() {
   const [currentSection, setCurrentSection] = useState('home');
@@ -19,6 +19,39 @@ function App() {
     { icon: <Database />, name: "Бэкенд разработка", level: "Продвинутый" },
     { icon: <Globe />, name: "Веб-приложения", level: "Эксперт" },
     { icon: <Cpu />, name: "Проектирование систем", level: "Средний" }
+  ];
+
+  const expertiseAreas = [
+    {
+      title: "Frontend Development",
+      skills: [
+        "HTML, CSS (SCSS), JavaScript (ES6+)",
+        "React, Vue.js, Alpine.js",
+        "Bootstrap, Tailwind CSS",
+        "GSAP, CSS Animations, Lottie",
+        "Webpack, Gulp, npm"
+      ]
+    },
+    {
+      title: "Backend Development",
+      skills: [
+        "PHP, Python (приоритет)",
+        "Java, C#/C++",
+        "SQL, MySQL",
+        "Nginx, Apache",
+        "Ubuntu/Linux"
+      ]
+    },
+    {
+      title: "Additional Expertise",
+      skills: [
+        "UI/UX Design",
+        "Git Version Control",
+        "SEO Optimization",
+        "CMS Integration (WordPress, Bitrix)",
+        "Адаптивная верстка"
+      ]
+    }
   ];
 
   const projects = [
@@ -149,55 +182,71 @@ function App() {
               </motion.header>
             )}
 
-{currentSection === 'about' && (
-  <motion.section 
-    key="about" 
-    {...pageTransition} 
-    className="min-h-screen flex items-center justify-center py-10 md:py-20"
-  >
-    <div className="glass-card rounded-2xl p-6 md:p-8 mx-4 md:mx-8 w-full max-w-7xl">
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Текстовый блок */}
-        <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-6 text-center md:text-left">Обо мне</h2>
-          <p className="text-gray-300 text-sm md:text-base mb-8 text-center md:text-left">
-            Я увлеченный дизайнер интерфейсов и full stack разработчик с 5-летним опытом создания красивых и функциональных цифровых решений. Я специализируюсь на пользовательском дизайне и современных веб-технологиях, предлагая решения, которые сочетают в себе эстетическую привлекательность и техническое совершенство.
-          </p>
-          {/* Сетка навыков */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {skills.map((skill, index) => (
-              <motion.div 
-                key={index} 
-                className="glass-btn p-3 rounded-xl hover:bg-opacity-50 transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+            {currentSection === 'about' && (
+              <motion.section 
+                key="about" 
+                {...pageTransition} 
+                className="min-h-screen py-10 md:py-20"
               >
-                <div className="flex items-center gap-3">
-                  <div className="text-white">{skill.icon}</div>
-                  <div>
-                    <div className="font-medium text-xs md:text-sm">{skill.name}</div>
-                    <div className="text-gray-400 text-xs">{skill.level}</div>
+                <div className="glass-card rounded-2xl p-6 md:p-8 mx-4 md:mx-8 w-full max-w-7xl">
+                  <div className="flex flex-col gap-8">
+                    {/* Основная информация */}
+                    <div>
+                      <h2 className="text-3xl font-bold mb-6">Обо мне</h2>
+                      <p className="text-gray-300 text-sm md:text-base mb-8">
+                        Я увлеченный дизайнер интерфейсов и full stack разработчик с 5-летним опытом создания красивых и функциональных цифровых решений. Я специализируюсь на пользовательском дизайне и современных веб-технологиях, предлагая решения, которые сочетают в себе эстетическую привлекательность и техническое совершенство.
+                      </p>
+                    </div>
+
+                    {/* Области экспертизы */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {expertiseAreas.map((area, index) => (
+                        <motion.div
+                          key={index}
+                          className="glass-btn p-6 rounded-xl"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <h3 className="text-lg font-semibold mb-4">{area.title}</h3>
+                          <ul className="space-y-2">
+                            {area.skills.map((skill, skillIndex) => (
+                              <li key={skillIndex} className="flex items-center gap-2 text-sm text-gray-300">
+                                <ChevronRight className="w-4 h-4 text-gray-500" />
+                                {skill}
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Основные навыки */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                      {skills.map((skill, index) => (
+                        <motion.div 
+                          key={index} 
+                          className="glass-btn p-3 rounded-xl hover:bg-opacity-50 transition-all"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="text-white">{skill.icon}</div>
+                            <div>
+                              <div className="font-medium text-xs md:text-sm">{skill.name}</div>
+                              <div className="text-gray-400 text-xs">{skill.level}</div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              </motion.section>
+            )}
 
-        {/* Блок с изображением */}
-        {/* <div className="w-full md:w-72 h-72 md:h-auto rounded-xl overflow-hidden glass-card shrink-0">
-          <img 
-            src="https://cdn.cosmos.so/95ebff29-7802-42d8-be1a-468ca99b69b5?format=jpeg" 
-            alt="Фото разработчика" 
-            className="w-full h-full object-cover"
-          />
-        </div> */}
-      </div>
-    </div>
-  </motion.section>
-)}
             {currentSection === 'projects' && (
               <motion.section key="projects" {...pageTransition} className="min-h-screen py-20 md:py-0 md:flex md:items-center">
                 <div>
