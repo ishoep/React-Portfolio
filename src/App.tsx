@@ -6,10 +6,13 @@ function App() {
   const [currentSection, setCurrentSection] = useState('home');
 
   const pageTransition = {
-    initial: { opacity: 0, x: 20 },
+    initial: { opacity: 0, x: -20 },
     animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -20 },
-    transition: { duration: 0.3 }
+    exit: { opacity: 0, x: 20 },
+    transition: { 
+      duration: 0.3,
+      ease: "easeInOut"
+    }
   };
 
   const skills = [
@@ -142,10 +145,14 @@ function App() {
       </nav>
 
       <div className="md:ml-16 p-4 pb-20 md:pb-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative">
           <AnimatePresence mode="wait">
             {currentSection === 'home' && (
-              <motion.header key="home" {...pageTransition} className="min-h-screen flex flex-col justify-center">
+              <motion.header 
+                key="home" 
+                {...pageTransition}
+                className="min-h-screen flex flex-col justify-center absolute inset-0"
+              >
                 <div className="glass-card p-6 md:p-8 rounded-2xl mb-6">
                   <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight">
                     ПРИВЕТ, <span className="text-white">Я</span><br />РЕЙН
@@ -191,8 +198,8 @@ function App() {
             {currentSection === 'about' && (
               <motion.section 
                 key="about" 
-                {...pageTransition} 
-                className="min-h-screen py-10 md:py-20"
+                {...pageTransition}
+                className="min-h-screen py-10 md:py-20 absolute inset-0"
               >
                 <div className="glass-card rounded-2xl p-6 md:p-8 mx-4 md:mx-8 w-full max-w-7xl">
                   <div className="flex flex-col gap-8">
@@ -254,7 +261,11 @@ function App() {
             )}
 
             {currentSection === 'projects' && (
-              <motion.section key="projects" {...pageTransition} className="min-h-screen py-20 md:py-0 md:flex md:items-center">
+              <motion.section 
+                key="projects" 
+                {...pageTransition}
+                className="min-h-screen py-20 md:py-0 md:flex md:items-center absolute inset-0"
+              >
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Избранные проекты</h2>
                   <div className="grid md:grid-cols-2 gap-4">
