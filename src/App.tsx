@@ -59,6 +59,12 @@ function App() {
 
   const projects = [
     {
+      title: "Приложение для анализа изображения",
+      description: "Веб-приложение, использующее бесплатное API для анализа изображений.",
+      image: "https://i.postimg.cc/kM8CrBD3/2025-02-08-183704.png",
+      tags: [ "React", "TypeScript", "Vite"]
+    },
+    {
       title: "Приложение для постановки целей",
       description: "Простое и удобное приложение для организации вашего дня и постановки целей.",
       image: "https://i.postimg.cc/fRjh42ZX/2025-02-06-230035.png",
